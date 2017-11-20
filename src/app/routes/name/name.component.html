@@ -1,0 +1,27 @@
+<div  (click)="name = !name" title="{{name}}">
+  {{name}}
+</div>
+<div>
+  <owl-date-time
+    [(ngModel)]="moment"
+    [autoClose]="true"
+    [dataType]="'string'">
+  </owl-date-time>
+</div>
+<ngx-datatable class="material"
+  [headerHeight]="40"
+  [footerHeight]="40"
+  [columnMode]="'flex'"
+  [rows]="rows"
+  [rowHeight]="'auto'"
+  [limit]="10"
+  [messages]="{emptyMessage: '无记录', totalMessage: '条'}">
+  <ngx-datatable-column name="姓名" prop="name" [flexGrow]="1" [resizeable]="false"></ngx-datatable-column>
+  <ngx-datatable-column name="用户编号" prop="gender" [flexGrow]="1" [resizeable]="false">
+    <ng-template let-value="value" ngx-datatable-cell-template>
+      <span *ngIf="value !== -1">{{value}}</span>
+      <span *ngIf="value === -1">-</span>
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="学习" prop="company" [flexGrow]="2" resizeable="false" ></ngx-datatable-column>
+</ngx-datatable>

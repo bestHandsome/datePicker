@@ -1,0 +1,11 @@
+<div>
+  <a class="col-lg-2" #fsbutton (click)="FullScreen($event)">
+    <em class="fa fa-expand">222</em>
+  </a>
+  <ul class="col-lg-2">
+    <li *ngFor='let item of menuItems'>
+      <a  [routerLink]="item.link" [attr.route]="item.link" title="{{item.text}}">{{item.text}}</a>
+    </li>
+  </ul>
+<i class="icon-people icons">人员</i>
+</div>
